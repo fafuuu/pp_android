@@ -71,6 +71,21 @@ public class MyActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed() {
+
+        if(myWebView.canGoBack()) {
+
+            myWebView.goBack();
+
+        } else {
+
+            super.onBackPressed();
+
+        }
+
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
